@@ -1,0 +1,36 @@
+server:
+  port: 8088
+spring:
+
+  application:
+    name: catcoffee
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/catcoffee?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: root
+  redis:
+    port: 6379
+    host: 127.0.0.1
+    password: 123456
+    database: 15
+    jedis:
+      pool:
+        max-active: 100
+        max-idle: 8
+        max-wait: 60000
+    timeout: 1000
+mybatis-plus:
+  configuration:
+    #在映射实体或者属性时，将数据库中表名和字段名 中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+catcoffee:
+  filepath:
+    avtar: D:\Users\Marxism\IdeaProjects\springLearn\catcoffe\src\main\resources\img\avtar\
+    goods: D:\Users\Marxism\IdeaProjects\springLearn\catcoffe\src\main\resources\img\goods\
+    user: D:\Users\Marxism\IdeaProjects\springLearn\catcoffe\src\main\resources\img\user\
